@@ -9,10 +9,9 @@ print(f'targets Shape: {targets.shape}')
 
 for i, image in enumerate(data):
     print(targets[i])
-    #print(data)
-    #image = cv2.Canny(image, threshold1 = 50, threshold2 = 100)
-    #image = cv2.HoughLinesP(image, 1, np.pi/180, 180, 20, 15)
-    cv2.imshow("Fall", image)
+    image = image.astype(np.uint8)  # Ensure the image is uint8
+    cv2.imshow(f"Image {i}", image)  # Unique window name for each image
 
-    cv2.waitKey(0) # waits until a key is pressed
-    cv2.destroyAllWindows() # destroys the window showing image
+    cv2.waitKey(1)  # Small delay instead of waiting for key press
+
+cv2.destroyAllWindows()  # destroys the window showing image
