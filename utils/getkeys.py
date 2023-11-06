@@ -22,3 +22,9 @@ def key_check():
         return ' '
     else:
         return 'W'
+
+while True:
+    print(key_check())
+    time.sleep(0.1)
+    if 'Q' in key_check():
+        break
